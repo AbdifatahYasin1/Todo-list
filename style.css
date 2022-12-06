@@ -3,18 +3,22 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: blanchedalmond;
 }
+
 .container {
   background-color: bisque;
   width: 40%;
   margin: auto;
   margin-top: 70px;
 }
+
 .header {
   text-align: center;
 }
+
 .list li {
   margin-top: 2px;
   list-style-type: square;
