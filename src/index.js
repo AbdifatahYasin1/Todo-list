@@ -1,3 +1,6 @@
+import _ from "lodash";
+import "./style.css";
+
 const list = document.createElement("ul");
 const container = document.querySelector(".container");
 const header = document.createElement("h1");
