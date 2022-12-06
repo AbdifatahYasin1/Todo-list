@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.5",
+    "lighthouse": "^9.6.8",
     "lodash": "^4.17.21"
   }
 }
