@@ -1,37 +1,37 @@
-import "./style.css";
+import './style.css';
 
 const todo = [
   {
-    description: "reading books",
+    description: 'reading books',
     completed: true,
     index: 1,
   },
   {
-    description: "reading books",
+    description: 'reading books',
     completed: true,
     index: 2,
   },
   {
-    description: "reading books",
+    description: 'reading books',
     completed: true,
     index: 3,
   },
   {
-    description: "reading books",
+    description: 'reading books',
     completed: true,
     index: 4,
   },
   {
-    description: "reading books",
+    description: 'reading books',
     completed: true,
     index: 5,
   },
 ];
 const displayData = (todo) => {
-  const list = document.createElement("div");
-  const container = document.querySelector(".container");
-  container.classList = "container";
-  list.classList = "list";
+  const list = document.createElement('div');
+  const container = document.querySelector('.container');
+  container.classList = 'container';
+  list.classList = 'list';
 
   todo.forEach((item, index) => {
     list.innerHTML += `
