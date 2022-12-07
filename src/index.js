@@ -1,56 +1,61 @@
-import './style.css';
+import "./style.css";
 
-const list = document.createElement('ul');
-const container = document.querySelector('.container');
-const header = document.createElement('h1');
-const btn = document.createElement('btn');
-
-btn.innerHTML = 'All completed';
-header.innerHTML = "Today's todo";
-header.classList = 'header';
-list.classList = 'list';
-
-const input = document.createElement('input');
-input.placeholder = 'Add to your list';
 const todo = [
   {
-    description: 'reading books',
+    description: "reading books",
     completed: true,
-    index: Number,
+    index: 1,
   },
   {
-    description: 'reading books',
+    description: "reading books",
     completed: true,
-    index: Number,
+    index: 2,
   },
   {
-    description: 'reading books',
+    description: "reading books",
     completed: true,
-    index: Number,
+    index: 3,
   },
   {
-    description: 'reading books',
+    description: "reading books",
     completed: true,
-    index: Number,
+    index: 4,
   },
   {
-    description: 'reading books',
+    description: "reading books",
     completed: true,
-    index: Number,
+    index: 5,
   },
 ];
-const displayData = () => {
+const displayData = (todo) => {
+  const list = document.createElement("div");
+  const container = document.querySelector(".container");
+  container.classList = "container";
+  list.classList = "list";
+
   todo.forEach((item, index) => {
     list.innerHTML += `
-    <li>${item.description}<li>
-    <hr>
-    <li>${index}<li>
+    <div class="items">
+    <div class="item">
+   
+    <input type="checkbox" id="checkbox" name="name" value="todo">
+   
+    <li >${item.description}<li>
+    <li class="display">${index}<li>
+    </div>
+    <div class="icon">
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+    </div>
+ 
+</div>
     
+    
+
+   
     `;
+
     container.appendChild(list);
   });
-  container.prepend(input);
-  container.prepend(header);
 };
-
-displayData();
+console.log(todo);
+displayData(todo);

@@ -6,9 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo list App</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/9d6e6aaa13.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div class="container"></div>
+    <nav>
+      <h1>Todo list</h1>
+      <h2 class="logo">
+        <i class="fa-regular fa-rectangle-list"> </i>
+      </h2>
+    </nav>
+    <section class="todo">
+      <header class="header">
+        <h2>Today's Tasks</h2>
+        <button id="refresh-btn">
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </button>
+      </header>
+      <input type="text" id="" placeholder="Add new task" />
+      <ul class="container"></ul>
+      <button id="clear-btn" type="button">Clear all completed</button>
+    </section>
 
     <script src="main.js"></script>
   </body>
