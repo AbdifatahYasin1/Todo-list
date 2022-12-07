@@ -9,7 +9,7 @@ nav {
   gap: 8px;
   background-color: #4cc9f0;
   width: 100%;
-  height: 10vh;
+  height: 50px;
 }
 
 nav h1,
@@ -23,14 +23,20 @@ h2 {
   width: 50%;
   margin: auto;
   border-radius: 0.25rem;
-  box-shadow: 5px 5px 5px #333;
+  box-shadow: 1px 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 60px;
 }
-
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 0;
   color: #4cc9f0;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
 }
 
 input {
@@ -64,11 +70,6 @@ button {
 #clear-btn:hover {
   background-color: #0077b6;
   color: #fff;
-}
-
-.items {
-  display: flex;
-  justify-content: space-around;
 }
 
 .icon {
