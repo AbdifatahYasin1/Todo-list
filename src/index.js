@@ -1,61 +1,56 @@
-import './style.css';
+import "./style.css";
 
-const todo = [
-  {
-    description: 'reading books',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'reading books',
-    completed: true,
-    index: 2,
-  },
-  {
-    description: 'reading books',
-    completed: true,
-    index: 3,
-  },
-  {
-    description: 'reading books',
-    completed: true,
-    index: 4,
-  },
-  {
-    description: 'reading books',
-    completed: true,
-    index: 5,
-  },
-];
-const displayData = (todo) => {
-  const list = document.createElement('div');
-  const container = document.querySelector('.container');
-  container.classList = 'container';
-  list.classList = 'list';
+const list = document.createElement("div");
+const addNew = document.querySelector(".addNew");
+const container = document.querySelector(".container");
+container.classList = "container";
+list.classList = "list";
+///
+const save = (title) => {
+  let books = [];
+  if (localStorage.getItem("book") === null) {
+    books = [];
+  } else {
+    books = JSON.parse(localStorage.getItem("book"));
+  }
+  let todo = { text1: description, text2: completed, text3: index };
+  books.push(todo);
+  localStorage.setItem("book", JSON.stringify(books));
+};
+///
 
-  todo.forEach((item, index) => {
+class Todo {
+  constructor(description, completed, index) {
+    (description = this.description),
+      (completed = this.completed),
+      (index = this.index);
+  }
+}
+
+const Add = (description, completed, index) => {
+  const newTodo = new Todo();
+  newTodo.forEach((item, index) => {
     list.innerHTML += `
-    <div class="items">
-    <div class="item">
-   
-    <input type="checkbox" id="checkbox" name="name" value="todo">
-   
-    <li >${item.description}<li>
-    <li class="display">${index}<li>
-    </div>
-    <div class="icon">
-    <i class="fa-solid fa-ellipsis-vertical"></i>
-    </div>
- 
-</div>
-    
-    
-
-   
-    `;
-
+        <div class="items">
+        <div class="item">
+       
+        <input type="checkbox" id="checkbox" name="name" value="todo">
+            <li >${item.description}<li>
+            <li class="display">${index}<li>
+            </div>
+            <div class="icon">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+         
+        </div>
+            `;
     container.appendChild(list);
   });
 };
-console.log(todo);
-displayData(todo);
+
+addNew.addEventListener("click", Add);
+// function hello(e) {
+//   {
+//     console.log(e.target);
+//   }
+// }
