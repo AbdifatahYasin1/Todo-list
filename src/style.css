@@ -4,10 +4,12 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: "Poppins", sans-serif;
   background: rgb(243, 246, 255);
 }
+
 #header {
   height: 48px;
   background: rgb(243, 246, 255);
@@ -24,6 +26,7 @@ body {
   color: rgb(2, 39, 118);
   text-transform: uppercase;
 }
+
 .container {
   width: 100%;
   height: 100vh;
@@ -31,6 +34,7 @@ body {
   display: grid;
   place-items: center;
 }
+
 .card {
   width: 300px;
   height: 400px;
@@ -41,6 +45,7 @@ body {
   place-items: center;
   position: relative;
 }
+
 .card-header {
   width: 100%;
   height: 100%;
@@ -56,6 +61,7 @@ body {
   margin-top: -20px;
   padding: 0 20px;
 }
+
 .card-body {
   width: 100%;
   height: 100%;
@@ -67,6 +73,7 @@ body {
   padding: 20px;
   overflow-y: auto;
 }
+
 .input-container {
   width: 100%;
   height: 50px;
@@ -76,6 +83,7 @@ body {
   justify-content: center;
   margin: 10px 0;
 }
+
 .input-container input {
   width: 100%;
   height: 100%;
@@ -89,11 +97,13 @@ body {
   border-bottom: 2px solid rgb(2, 39, 118);
   transition: all 0.3s ease;
 }
+
 .input-container input::placeholder {
   color: rgb(57, 76, 117);
   font-size: 16px;
   font-weight: 400;
 }
+
 .clear-btn {
   width: 100%;
   height: 50px;
@@ -103,11 +113,13 @@ body {
   justify-content: center;
   margin: 10px 0;
 }
+
 .todo-container {
   width: 100%;
   background: rgb(243, 246, 255);
   height: 300px;
 }
+
 .todo-list {
   width: 100%;
   height: 100%;
@@ -118,6 +130,7 @@ body {
   flex-direction: column;
   padding: 20px;
 }
+
 .todo {
   width: 100%;
   height: 50px;
@@ -130,6 +143,7 @@ body {
   margin: 10px 0;
   border-bottom: 1px solid rgb(242, 242, 242);
 }
+
 .todo-text {
   width: 100%;
   height: 50%;
@@ -142,6 +156,7 @@ body {
   font-weight: 400;
   border: none;
 }
+
 .checkbox {
   width: 20px;
   height: 20px;
@@ -153,38 +168,48 @@ body {
   border-radius: 50%;
   margin-right: 10px;
 }
+
 .fa-trash {
   color: red;
   outline: none;
   border: none;
 }
+
 .completed > .todo-text {
   text-decoration: line-through;
   color: rgb(57, 76, 117);
 }
+
 .error {
   border-bottom: 2px solid red;
 }
+
 .shake {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }
+
 .reload {
   cursor: pointer;
 }
+
 @keyframes shake {
   0% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(10px);
   }
+
   50% {
     transform: translateX(-10px);
   }
+
   75% {
     transform: translateX(10px);
   }
+
   100% {
     transform: translateX(0);
   }
