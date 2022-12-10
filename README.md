@@ -2,7 +2,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [To Do list: list structure] <a name="about-project"></a>
+# 📖 [To Do list:] <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
