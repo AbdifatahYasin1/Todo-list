@@ -1,10 +1,10 @@
 import './style.css';
+import { reArrange, checkTodo, editTodo } from './module/functionalities';
 
 const input = document.querySelector('#input');
 const form = document.querySelector('#form');
 const todos = document.querySelector('#todo-list');
 const clearbtn = document.querySelector('.clear-btn');
-
 const createElement = (tag, className, dataset = '', text = '') => {
   const element = document.createElement(tag);
   element.className = className;
@@ -13,18 +13,6 @@ const createElement = (tag, className, dataset = '', text = '') => {
   element.textContent = text;
   return element;
 };
-
-const reArrange = (list) => {
-  if (!Array.isArray(list)) {
-    return;
-  }
-  const newList = [];
-  list.forEach((item, index) => {
-    newList.push({ id: index, text: item.text, completed: item.completed });
-  });
-  localStorage.setItem('list', JSON.stringify(newList));
-};
-
 const Save = (text) => {
   let list = [];
   if (localStorage.getItem('list')) {
@@ -34,18 +22,6 @@ const Save = (text) => {
   localStorage.setItem('list', JSON.stringify(list));
   return list;
 };
-
-const checkTodo = (e) => {
-  const { id } = e.target.dataset;
-  const list = JSON.parse(localStorage.getItem('list'));
-  const item = list.find((item) => item.id === id);
-  item.completed = !item.completed;
-  localStorage.setItem('list', JSON.stringify(list));
-  reArrange(todos);
-  const select = document.querySelector(`[data-id="${id}"]`);
-  select.classList.toggle('completed');
-};
-
 const loadTodos = () => {
   const deleteTodo = (e) => {
     // delete from local storage if delete button is clicked
@@ -60,19 +36,17 @@ const loadTodos = () => {
     const list = JSON.parse(localStorage.getItem('list'));
     reArrange(list);
     const newList = JSON.parse(localStorage.getItem('list'));
-
     newList.forEach((item) => {
       const todo = createElement('li', 'todo', item.id, '');
-
       const checkBox = createElement('input', 'check-btn', item.id, '');
       checkBox.addEventListener('change', (e) => checkTodo(e));
       todo.appendChild(checkBox);
-      const text = createElement('span', 'todo-text', item.id, item.text);
+      const text = createElement('textArea', 'todo-text', item.id, item.text);
+      text.addEventListener('change', (e) => editTodo(e));
       todo.appendChild(text);
       const deleteBtn = createElement('i', 'fa fa-trash', item.id, '');
       deleteBtn.addEventListener('click', (e) => deleteTodo(e));
       todo.appendChild(deleteBtn);
-
       todos.appendChild(todo);
       if (item.completed) {
         todo.classList.add('completed');
@@ -81,7 +55,6 @@ const loadTodos = () => {
     });
   }
 };
-
 const addTodo = (e) => {
   e.preventDefault();
   if (input.value === '') {
@@ -91,14 +64,12 @@ const addTodo = (e) => {
       input.classList.remove('error');
       input.classList.remove('shake');
     }, 1000);
-
     return;
   }
   Save(input.value);
   loadTodos();
   input.value = '';
 };
-
 // clear all todos
 clearbtn.addEventListener('click', () => {
   if (!localStorage.getItem('list')) {
@@ -109,14 +80,10 @@ clearbtn.addEventListener('click', () => {
   localStorage.setItem('list', JSON.stringify(filteredList));
   loadTodos();
 });
-
 form.addEventListener('submit', (e) => addTodo(e));
-
 document.querySelector('.reload').addEventListener('click', () => loadTodos());
-
 const init = () => {
   console.log('App is running');
   loadTodos();
 };
-
 document.addEventListener('DOMContentLoaded', init);
