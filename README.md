@@ -109,7 +109,7 @@ Install this project with:
 Cloning steps:
 
 1. - [ ] Open on the `Terminal`
-2. - [ ] Run `https://github.com/AbdifatahYasin1/Awesome-books-with-ES6.git`
+2. - [ ] Run `https://github.com/AbdifatahYasin1/Todo-list.git`
 3. - [ ] cd My-portfolio-Web
 4. - [ ] Open in the IDE
 5. - [ ] open with the liver server
