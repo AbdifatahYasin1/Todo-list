@@ -1,5 +1,5 @@
 const todos = document.querySelector('#todo-list');
-const reArrange = (list) => {
+export const reArrange = (list) => {
   if (!Array.isArray(list)) {
     return;
   }
@@ -9,7 +9,7 @@ const reArrange = (list) => {
   });
   localStorage.setItem('list', JSON.stringify(newList));
 };
-const checkTodo = (e) => {
+export const checkTodo = (e) => {
   const { id } = e.target.dataset;
   const list = JSON.parse(localStorage.getItem('list'));
   const item = list.find((item) => `${item.id}` === id);
@@ -19,7 +19,7 @@ const checkTodo = (e) => {
   const select = document.querySelector(`[data-id="${id}"]`);
   select.classList.toggle('completed');
 };
-const editTodo = (e) => {
+export const editTodo = (e) => {
   const { id } = e.target.dataset;
   const taskText = e.target.value;
   const currentState = JSON.parse(localStorage.getItem('list'));
