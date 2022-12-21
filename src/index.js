@@ -1,5 +1,5 @@
 import './style.css';
-import { reArrange, checkTodo, editTodo } from './module/functionalities';
+// import { reArrange, checkTodo, editTodo } from './module/functionalities';
 
 const input = document.querySelector('#input');
 const form = document.querySelector('#form');
@@ -13,6 +13,40 @@ const createElement = (tag, className, dataset = '', text = '') => {
   element.textContent = text;
   return element;
 };
+
+const reArrange = (list) => {
+  if (!Array.isArray(list)) {
+    return;
+  }
+  9;
+  const newList = [];
+  list.forEach((item, index) => {
+    newList.push({ id: index, text: item.text, completed: item.completed });
+  });
+  localStorage.setItem('list', JSON.stringify(newList));
+};
+const checkTodo = (e) => {
+  const { id } = e.target.dataset;
+  const list = JSON.parse(localStorage.getItem('list'));
+  const item = list.find((item) => `${item.id}` === id);
+  item.completed = !item.completed;
+  localStorage.setItem('list', JSON.stringify(list));
+  reArrange(todos);
+  const select = document.querySelector(`[data-id="${id}"]`);
+  select.classList.toggle('completed');
+};
+const editTodo = (e) => {
+  const { id } = e.target.dataset;
+  const taskText = e.target.value;
+  const currentState = JSON.parse(localStorage.getItem('list'));
+  currentState.forEach((el) => {
+    if (`${el.id}` === id) {
+      el.text = taskText;
+    }
+  });
+  localStorage.setItem('list', JSON.stringify(currentState));
+};
+
 const Save = (text) => {
   let list = [];
   if (localStorage.getItem('list')) {
