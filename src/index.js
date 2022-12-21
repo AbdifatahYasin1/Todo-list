@@ -14,8 +14,6 @@ const createElement = (tag, className, dataset = '', text = '') => {
   return element;
 };
 
-
-
 const Save = (text) => {
   let list = [];
   if (localStorage.getItem('list')) {
