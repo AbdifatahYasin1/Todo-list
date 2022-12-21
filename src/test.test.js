@@ -1,37 +1,23 @@
-const taskStore = require('./fortest');
-let array = [];
-describe('add and remove', () => {
-  // Add
 
+const TodoFunction = require('./practice');
+let array = [];
+describe('Testing', () => {
   test('add test', () => {
-    array = taskStore.add(array, 'test1');
+    expect(TodoFunction.addTodo('', array)).toHaveLength(0);
+    array = TodoFunction.addTodo('test1', array);
     expect(array).toHaveLength(1);
-    array = taskStore.add(array, 'test2');
+    array = TodoFunction.addTodo('test2', array);
     expect(array).toHaveLength(2);
   });
-  // update
-  test('update test', () => {
-    array = taskStore.update(array, 0, 'test1');
-    expect(array[0].description).toBe('test1');
-    array = taskStore.update(array, 1, 'test2');
-    expect(array[1].description).toBe('test2');
-  });
-  // remove
-  test('remove test', () => {
-    array = taskStore.removeTask(array, 1);
-    expect(array).toHaveLength(1);
-  });
-  test('checkBox test', () => {
-    array = taskStore.changeCheck(array, 0, true);
-    expect(array[0].completed).toBe(true);
-  });
-  test('clear All checked', () => {
-    array = taskStore.add(array, 'test2');
-    array = taskStore.add(array, 'test3');
-    array = taskStore.changeCheck(array, 2, true);
-    array = taskStore.clearChecked(array);
-    expect(array).toHaveLength(1);
-    expect(array[0].completed).toBe(false);
-    expect(array[0].description).toBe('test2');
+
+  test('delete test', () => {
+    array = [
+      { id: 0, text: 'test', completed: false },
+      { id: 1, text: 'test2', completed: false },
+      { id: 1, text: 'test2', completed: false },
+    ];
+    expect(TodoFunction.deleteTodo('', array)).toHaveLength(3);
+    array = TodoFunction.deleteTodo(1, array);
+    expect(array).toHaveLength(2);
   });
 });
