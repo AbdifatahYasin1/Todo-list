@@ -13,7 +13,7 @@ function deleteTodo(input, array) {
     return array;
   }
   array.splice(input, 1);
-  for (let i = 0; i < array.length; i + 1) {
+  for (let i = 0; i < array.length; i+=1) {
     array[i].id = i;
   }
   return array;
