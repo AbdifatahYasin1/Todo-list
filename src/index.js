@@ -1,7 +1,7 @@
 import './style.css';
 import { reArrange, checkTodo, editTodo } from './module/functionalities';
 
-const input = document.querySelector('#input');
+const input = document.querySelector('#iernput');
 const form = document.querySelector('#form');
 const todos = document.querySelector('#todo-list');
 const clearbtn = document.querySelector('.clear-btn');
