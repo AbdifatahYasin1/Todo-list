@@ -166,6 +166,11 @@ Example:
 - Twitter: [@CabdifataaxYuusuf](https://twitter.com/CabdifataaxYy)
 - LinkedIn: [Cabdifataax Yaasiin](https://www.linkedin.com/in/cabdifataax-yaasiin-69977019a/)
 
+👤 **Bernabas**
+
+ -GitHub: [@githubhandle](https://github.com/bernabasy)
+ -LinkedIn: [LinkedIn](https://www.linkedin.com/in/bernabas-yosef-74b571186)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
