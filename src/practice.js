@@ -1,5 +1,3 @@
-const { filter } = require('lodash');
-
 function addTodo(input, array) {
   if (input !== '') {
     array.push({
