@@ -88,3 +88,5 @@ const init = () => {
   loadTodos();
 };
 document.addEventListener('DOMContentLoaded', init);
+
+//Completed
